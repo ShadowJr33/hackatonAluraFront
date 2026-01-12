@@ -3,6 +3,7 @@ import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { Activity, ShieldCheck, Zap, ArrowRight } from 'lucide-react';
 import insightBot from '../assets/insight-bot.png';
+import logo from '../assets/Churn Alert Shield.png';
 
 export default function LandingPage({ onLaunch }) {
     return (
@@ -15,12 +16,10 @@ export default function LandingPage({ onLaunch }) {
 
             {/* Navbar */}
             <nav className="relative z-10 p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
-                <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded bg-gradient-to-br from-neon-cyan to-blue-500 flex items-center justify-center">
-                        <Activity className="text-navy-deep w-5 h-5" />
-                    </div>
+                <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <img src={logo} alt="Logo" className="w-8 h-8 object-contain" />
                     <span className="text-2xl font-bold tracking-tighter text-white">Churn<span className="text-neon-cyan">Alert</span></span>
-                </div>
+                </a>
                 <Button variant="glass" className="text-sm px-4 py-2" onClick={onLaunch}>Acceder</Button>
             </nav>
 
@@ -32,9 +31,9 @@ export default function LandingPage({ onLaunch }) {
                     transition={{ duration: 0.8 }}
                     className="flex flex-col items-center gap-6"
                 >
-                    <div className="inline-block p-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-4">
+                    {/* <div className="inline-block p-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-4">
                         <span className="px-3 py-1 text-xs text-neon-cyan font-mono uppercase tracking-widest">IA de Comando Central v2.0</span>
-                    </div>
+                    </div> */}
 
                     <h1 className="text-5xl md:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
                         Anticipa el Futuro <br /> de tus Clientes

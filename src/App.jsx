@@ -16,7 +16,7 @@ function App() {
             {currentView === 'landing' ? (
                 <LandingPage onLaunch={handleLaunch} />
             ) : (
-                <Dashboard />
+                <Dashboard onBack={() => setCurrentView('landing')} />
             )}
         </div>
     );

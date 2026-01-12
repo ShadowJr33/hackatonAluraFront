@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { LayoutDashboard, UploadCloud, FileSearch, Settings, ChevronLeft, ChevronRight, LogOut } from 'lucide-react';
 import { clsx } from 'clsx';
 
-export function Sidebar({ activeTab, setActiveTab }) {
+import logo from '../../assets/Churn Alert Shield.png';
+
+export function Sidebar({ activeTab, setActiveTab, onBack }) {
     const [isCollapsed, setIsCollapsed] = useState(false);
 
     const menuItems = [
@@ -22,13 +24,15 @@ export function Sidebar({ activeTab, setActiveTab }) {
             {/* Header */}
             <div className="p-6 flex items-center justify-between">
                 {!isCollapsed && (
-                    <motion.span
+                    <motion.button
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        className="font-bold text-xl tracking-tighter text-white"
+                        onClick={onBack}
+                        className="font-bold text-xl tracking-tighter text-white flex items-center gap-2 hover:opacity-80 transition-opacity"
                     >
-                        Churn<span className="text-neon-cyan">Alert</span>
-                    </motion.span>
+                        <img src={logo} alt="Logo" className="w-8 h-8 object-contain" />
+                        <span>Churn<span className="text-neon-cyan">Alert</span></span>
+                    </motion.button>
                 )}
                 <button
                     onClick={() => setIsCollapsed(!isCollapsed)}

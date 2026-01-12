@@ -5,7 +5,7 @@ import ResultsTable from '../components/dashboard/ResultsTable';
 import InsightPanel from '../components/dashboard/InsightPanel';
 import { AnimatePresence } from 'framer-motion';
 
-export default function Dashboard() {
+export default function Dashboard({ onBack }) {
     const [activeTab, setActiveTab] = useState('batch');
     const [viewState, setViewState] = useState('upload'); // 'upload' | 'results'
     const [selectedCustomer, setSelectedCustomer] = useState(null);
@@ -20,7 +20,7 @@ export default function Dashboard() {
 
     return (
         <div className="flex h-screen bg-navy-deep text-white overflow-hidden font-sans">
-            <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+            <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} onBack={onBack} />
 
             <main className="flex-1 relative overflow-hidden flex flex-col">
                 {/* Background Gradients */}
